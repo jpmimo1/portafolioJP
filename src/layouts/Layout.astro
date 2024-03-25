@@ -1,0 +1,30 @@
+---
+import MainHeaderReact from "../components/MainHeaderReact";
+import type { LanguagesContent } from "../types/content";
+import { ContentPage } from "../data";
+
+interface Props {
+  language: LanguagesContent;
+}
+
+const { language } = Astro.props;
+
+const { title } = ContentPage[language];
+---
+
+<!doctype html>
+<html lang={language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link href="/assets/icons/icons.css" rel="stylesheet" />
+  </head>
+  <body>
+    <MainHeaderReact language={language} client:visible/>
+    <slot />
+  </body>
+</html>
