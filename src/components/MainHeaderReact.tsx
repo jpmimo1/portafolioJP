@@ -47,7 +47,12 @@ const MainHeaderReact = ({ language }: Props) => {
                 menuItems.map((menuitem) => {
                   return (
                     <li className="py-4 px-2 border-primary-700 dark:border-white border-b" key={menuitem.title}>
-                      <a href={menuitem.url} className='text-primary-700 dark:text-white flex items-center gap-6 text-xl text'>
+                      <a
+                        onClick={() => {
+                          setTimeout(() => { setStateMenuResponsive(false); }, 500);
+                        }}
+                        href={menuitem.url}
+                        className='text-primary-700 dark:text-white flex items-center gap-6 text-xl text'>
                         <span className={`${menuitem.iconClass || ''} h-8 w-8 text-2xl flex items-center justify-center`}></span>
                         {menuitem.title}
                       </a>

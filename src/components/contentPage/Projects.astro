@@ -21,7 +21,8 @@ const {
 } = ContentPage[language].projectContent;
 ---
 
-<section class="bg-auxiliar1-200 py-12">
+<section class="bg-auxiliar1-200 py-12 relative">
+  <div id="projects-section" class="absolute bottom-full h-16"></div>
   <div class="px-4">
     <h3 class="text-primary-700 text-4xl mb-5">{title}</h3>
     <p class="mb-7">{paragraph}</p>
@@ -42,6 +43,11 @@ const {
           })
       }
     </div>
-    <ButtonComplete text={seeMoreText} icon1={seeMoreIcon} typeElement="a" size="xl"/>
+    <ButtonComplete
+      text={seeMoreText}
+      icon1={seeMoreIcon}
+      typeElement="a"
+      size="xl"
+    />
   </div>
 </section>

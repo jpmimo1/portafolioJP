@@ -21,12 +21,12 @@ export const ContentPage: IContentLanguages = {
   es: {
     title: 'Jean Paul - Developer',
     itemsHeader: [
-      { title: 'Inicio', url: '/es', iconClass: 'iconportafoliojp-home' },
-      { title: 'Sobre mi', url: '/es#about-me', iconClass: 'iconportafoliojp-person' },
-      { title: 'Mis conocimientos', url: '/es#about-me', iconClass: 'iconportafoliojp-menu-book' },
-      { title: 'Mi experiencia', url: '/es#about-me', iconClass: 'iconportafoliojp-work' },
-      { title: 'Mis proyectos', url: '/es#about-me', iconClass: 'iconportafoliojp-public' },
-      { title: 'Contáctame', url: '/es#about-me', iconClass: 'iconportafoliojp-mail' }
+      { title: 'Inicio', url: '#home-section', iconClass: 'iconportafoliojp-home' },
+      { title: 'Sobre mi', url: '#about-section', iconClass: 'iconportafoliojp-person' },
+      { title: 'Mis conocimientos', url: '#knowledge-section', iconClass: 'iconportafoliojp-menu-book' },
+      { title: 'Mi experiencia', url: '#experience-section', iconClass: 'iconportafoliojp-work' },
+      { title: 'Mis proyectos', url: '#projects-section', iconClass: 'iconportafoliojp-public' },
+      { title: 'Contáctame', url: '#contact-section', iconClass: 'iconportafoliojp-mail' }
     ],
     languages: { title: 'Idiomas', items: { en: 'Ingles', es: 'Español' } },
     homeContent: {
@@ -272,8 +272,12 @@ export const ContentPage: IContentLanguages = {
   en: {
     title: 'Jean Paul - Developer',
     itemsHeader: [
-      { title: 'Home', url: '/en' },
-      { title: 'About me', url: '/es#about-me' }
+      { title: 'Home', url: '#home-section', iconClass: 'iconportafoliojp-home' },
+      { title: 'About me', url: '#about-section', iconClass: 'iconportafoliojp-person' },
+      { title: 'My knowledge', url: '#knowledge-section', iconClass: 'iconportafoliojp-menu-book' },
+      { title: 'My experience', url: '#experience-section', iconClass: 'iconportafoliojp-work' },
+      { title: 'My projects', url: '#projects-section', iconClass: 'iconportafoliojp-public' },
+      { title: 'Contact me', url: '#contact-section', iconClass: 'iconportafoliojp-mail' }
     ],
     languages: { title: 'Languages', items: { en: 'English', es: 'Spanish' } },
     homeContent: {

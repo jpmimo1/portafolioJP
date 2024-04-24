@@ -15,7 +15,8 @@ const { title, subTitle, button1, button2 } = ContentPage[language].homeContent;
 const TitleComponent = () => title;
 ---
 
-<div class="bg-white py-12">
+<section class="bg-white py-12 relative">
+  <div id="home-section" class="absolute bottom-full h-16"></div>
   <div class="flex flex-col items-center px-4">
     <div
       class="mb-4 w-40 h-40 rounded-full border-primary-700 border-4 relative overflow-hidden"
@@ -59,4 +60,4 @@ const TitleComponent = () => title;
       <IconButton typeElement="a" icon="iconportafoliojp-linkedin" href="#" />
     </div>
   </div>
-</div>
+</section>
