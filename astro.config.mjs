@@ -12,5 +12,7 @@ export default defineConfig({
       prefixDefaultLocale: true
     }
   },
-  integrations: [tailwind(), react()]
+  integrations: [tailwind({
+    applyBaseStyles: false,
+  }), react()]
 });

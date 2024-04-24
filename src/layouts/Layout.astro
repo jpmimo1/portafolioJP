@@ -2,6 +2,8 @@
 import MainHeaderReact from "../components/MainHeaderReact";
 import type { LanguagesContent } from "../types/content";
 import { ContentPage } from "../data";
+import "../styles/base.css";
+import Footer from "../components/contentPage/Footer.astro";
 
 interface Props {
   language: LanguagesContent;
@@ -9,7 +11,7 @@ interface Props {
 
 const { language } = Astro.props;
 
-const { title } = ContentPage[language];
+const { title } = ContentPage[language || "es"];
 ---
 
 <!doctype html>
@@ -23,8 +25,15 @@ const { title } = ContentPage[language];
     <title>{title}</title>
     <link href="/assets/icons/icons.css" rel="stylesheet" />
   </head>
-  <body>
-    <MainHeaderReact language={language} client:visible/>
-    <slot />
+  <body class="text-slate-700">
+    <MainHeaderReact language={language} client:load />
+    <div class="pt-16">
+      <slot />
+    </div>
+    <Footer language={language} />
   </body>
 </html>
+
+<script>
+  import { currentTheme } from "../stores/themeStore";
+</script>

@@ -1,0 +1,38 @@
+---
+import { technologies } from "../data";
+import "@splidejs/splide/css";
+
+const technologiesList = Object.keys(technologies).map((key) => {
+  const keyTechnologi = key as keyof typeof technologies;
+  return technologies[keyTechnologi];
+});
+---
+
+<section class="splide" aria-label="technologies">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {
+        technologiesList.map(({ name, url }) => {
+          return (
+            <div class="splide__slide flex justify-center">
+              <img src={url} title={name} alt={name} class="w-24" />
+            </div>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>
+
+<script>
+  import Splide from "@splidejs/splide";
+  import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+
+  new Splide(".splide", {
+    arrows: false,
+    pagination: false,
+    type: "loop",
+    mediaQuery: "min",
+    perPage: 3,
+  }).mount({ AutoScroll });
+</script>

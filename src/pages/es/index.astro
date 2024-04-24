@@ -1,9 +1,22 @@
 ---
+import AboutContent from "../../components/contentPage/AboutContent.astro";
+import Contact from "../../components/contentPage/Contact.astro";
+import Experience from "../../components/contentPage/Experience.astro";
+import HomeContent from "../../components/contentPage/HomeContent.astro";
+import Knowledge from "../../components/contentPage/Knowledge.astro";
+import Projects from "../../components/contentPage/Projects.astro";
 import Layout from "../../layouts/Layout.astro";
+
+const language = "es";
 ---
 
-<Layout language="es">
+<Layout language={language}>
   <main>
-    <!-- <div style="height: 3000px;"></div> -->
+    <HomeContent language={language} />
+    <AboutContent language={language} />
+    <Knowledge language={language} />
+    <Experience language={language} />
+    <Projects language={language} />
+    <Contact language={language} />
   </main>
 </Layout>

@@ -77,3 +77,15 @@
 .iconportafoliojp-linkedin:before {
   content: "\6d";
 }
+.iconportafoliojp-visibility:before {
+  content: "\6e";
+}
+.iconportafoliojp-send:before {
+  content: "\6f";
+}
+.iconportafoliojp-pdf:before {
+  content: "\70";
+}
+.iconportafoliojp-check:before {
+  content: "\71";
+}

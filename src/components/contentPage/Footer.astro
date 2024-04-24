@@ -1,0 +1,16 @@
+---
+import { ContentPage } from "../../data";
+import type { LanguagesContent } from "../../types/content";
+
+interface Props {
+  language: LanguagesContent;
+}
+
+const { language } = Astro.props;
+
+const { text } = ContentPage[language].footer;
+---
+
+<footer class="bg-primary-900 text-white p-4">
+  <div class="text-center">{text}</div>
+</footer>

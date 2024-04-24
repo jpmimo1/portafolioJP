@@ -1,0 +1,26 @@
+---
+import { ContentPage } from "../../data";
+import type { LanguagesContent } from "../../types/content";
+import JobTimeLine from "../JobTimeLine.astro";
+
+interface Props {
+  language: LanguagesContent;
+}
+
+const { language } = Astro.props;
+
+const { title, jobs } = ContentPage[language].experienceContent;
+---
+
+<div class="bg-primary-700 text-white py-12">
+  <div class="px-4">
+    <h3 class="text-4xl mb-5">{title}</h3>
+    <div class="flex flex-col">
+      {
+        jobs.map((job) => {
+          return <JobTimeLine job={job} />;
+        })
+      }
+    </div>
+  </div>
+</div>
