@@ -71,7 +71,7 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
                           e.preventDefault();
                           const elementAnchor = e.target as HTMLAnchorElement;
                           setStateMenuResponsive(false);
-                          setTimeout(() => { window.location.href = elementAnchor.href; }, 200);
+                          setTimeout(() => { window.location.replace(elementAnchor.href); }, 200);
                         }}
                         href={`/${language}${menuitem.url}`}
                         className='text-primary-700 dark:text-white flex items-center gap-6 text-xl text'>
