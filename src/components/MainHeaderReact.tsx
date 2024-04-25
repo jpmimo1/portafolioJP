@@ -18,9 +18,6 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
 
   const contentPath = useMemo(() => {
     const newContentPath = currentPath.replace(`/${language}`, '');
-    if (newContentPath === '/') {
-      return '';
-    }
     return newContentPath;
   }, [currentPath, language]);
 
@@ -68,12 +65,12 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
                     <li className="py-4 px-2 border-primary-700 dark:border-white border-b" key={menuitem.title}>
                       <a
                         onClick={(e) => {
-                          // e.preventDefault();
-                          // const elementAnchor = e.target as HTMLAnchorElement;
-                          // setStateMenuResponsive(false);
-                          // setTimeout(() => { window.location.(elementAnchor.href); }, 200);
+                          e.preventDefault();
+                          const elementAnchor = e.target as HTMLAnchorElement;
+                          setStateMenuResponsive(false);
+                          setTimeout(() => { window.location.href = elementAnchor.href; }, 200);
                         }}
-                        href={`/${language}${menuitem.url}`}
+                        href={`/${language}/${menuitem.url}`}
                         className='text-primary-700 dark:text-white flex items-center gap-6 text-xl text'>
                         <span className={`${menuitem.iconClass || ''} h-8 w-8 text-2xl flex items-center justify-center`}></span>
                         {menuitem.title}
