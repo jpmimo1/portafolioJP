@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import type { LanguagesContent } from '../types/content';
 import { ContentPage } from '../data';
-import Button from './basic/Button';
 import SwitchTheme from './SwitchTheme';
 import ButtonComplete from './basic/ButtonComplete';
 

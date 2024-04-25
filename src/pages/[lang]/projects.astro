@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import type { LanguagesContent } from "../../types/content";
+import { ContentPage, ContentProjectPage } from "../../data";
+import CardProject from "../../components/CardProject.astro";
+
+export const getStaticPaths = () => {
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
+};
+const { lang } = Astro.params;
+
+const language = lang as LanguagesContent;
+
+const { title, paragraph } = ContentProjectPage[language];
+const { projects, seeProjectIcon, seeProjectText } =
+  ContentPage[language].projectContent;
+---
+
+<Layout language={language}>
+  <main>
+    <div class="py-12">
+      <div class="px-4">
+        <h1 class="text-primary-700 text-4xl mb-5">{title}</h1>
+        <p class="mb-6">{paragraph}</p>
+        <div class="grid grid-cols-1 gap-4">
+          {
+            projects.map((project, i) => {
+              return (
+                <CardProject
+                  language={language}
+                  project={project}
+                  seeProjectText={seeProjectText}
+                  seeProjectIcon={seeProjectIcon}
+                />
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

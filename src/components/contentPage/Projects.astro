@@ -30,14 +30,13 @@ const {
       {
         projects
           .filter((_, i) => i < 4)
-          .map((project, i) => {
+          .map((project) => {
             return (
               <CardProject
                 project={project}
                 language={language}
                 seeProjectIcon={seeProjectIcon}
                 seeProjectText={seeProjectText}
-                index={i}
               />
             );
           })
@@ -48,6 +47,7 @@ const {
       icon1={seeMoreIcon}
       typeElement="a"
       size="xl"
+      href={`/${language}/projects`}
     />
   </div>
 </section>

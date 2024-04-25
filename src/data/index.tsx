@@ -1,4 +1,4 @@
-import type { IContentLanguages, ITechnology } from "../types/content";
+import type { IContentLanguages, IProjectPageLanguages, ITechnology } from "../types/content";
 
 type keysTechnologies = "HTML" | "CSS3" | "JavaScript" | "TypeScript" | "ReactJS" | "NextJS" | "Tailwind" | "Redux" | "NodeJS" | "Git" | "Selenium" | "Jest";
 
@@ -373,5 +373,16 @@ export const ContentPage: IContentLanguages = {
     footer: {
       text: '© Copyrigth 2024 - made by Jean Paul F.'
     }
-  },
+  }
 };
+
+export const ContentProjectPage: IProjectPageLanguages = {
+  es: {
+    title: 'Mis Proyectos',
+    paragraph: "Estos son algunos de los proyectos en los que he estado trabajando. Si tienes alguna pregunta o estás interesado en colaborar, no dudes en ponerte en contacto conmigo."
+  },
+  en: {
+    title: 'My projects',
+    paragraph: "These are some of the projects I have been working on. If you have any questions or are interested in collaborating, please do not hesitate to contact me."
+  }
+}

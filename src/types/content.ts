@@ -102,7 +102,16 @@ interface IContent {
   footer: IFooter
 }
 
-export interface IContentLanguages {
-  [key: string]: IContent,
+export type IContentLanguages = {
+  [key in LanguagesContent]: IContent
+}
+
+interface IProjectPage {
+  title: string,
+  paragraph: string
+}
+
+export type IProjectPageLanguages = {
+  [key in LanguagesContent]: IProjectPage
 }
 

@@ -10,11 +10,9 @@ interface Props {
   seeProjectText: string;
   seeProjectIcon: string;
   language: LanguagesContent;
-  index: number;
 }
 
-const { project, seeProjectIcon, seeProjectText, language, index } =
-  Astro.props;
+const { project, seeProjectIcon, seeProjectText, language } = Astro.props;
 
 const {
   title,
