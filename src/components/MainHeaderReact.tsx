@@ -22,7 +22,7 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
   }, [currentPath, language]);
 
   const currentMenuItems = useMemo(() => {
-    if (contentPath === '') {
+    if (contentPath === '' || contentPath === '/') {
       return menuItems;
     } else {
       return [menuItems[0]];
