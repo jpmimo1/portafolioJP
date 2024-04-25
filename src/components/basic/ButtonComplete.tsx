@@ -117,12 +117,17 @@ const ButtonComplete = (props: Props) => {
     bgColor = 'primary',
     textColor = 'white',
     rounded = 'normal',
+    className,
     ...buttonProps
   } = props;
 
 
   const classNameStyles = classNames(
-    baseStyles, sizeStyles[size], variantStyles(bgColor, textColor)[variant], roundedStyles[rounded]
+    className,
+    baseStyles,
+    sizeStyles[size],
+    variantStyles(bgColor, textColor)[variant],
+    roundedStyles[rounded]
   );
   const iconStyles = classNames(baseStylesIcon, sizeIconStyles[size]);
 

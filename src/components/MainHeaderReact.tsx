@@ -3,6 +3,7 @@ import type { LanguagesContent } from '../types/content';
 import { ContentPage } from '../data';
 import Button from './basic/Button';
 import SwitchTheme from './SwitchTheme';
+import ButtonComplete from './basic/ButtonComplete';
 
 interface Props {
   language: LanguagesContent
@@ -64,8 +65,24 @@ const MainHeaderReact = ({ language }: Props) => {
             <div className='flex flex-col items-center gap-4 py-4 text-2xl text-primary-700 dark:text-white'>
               {languageOptions.title}
               <div className='flex gap-8'>
-                <Button text={languageOptions.items.es} />
-                <Button text={languageOptions.items.en} />
+                <ButtonComplete
+                  href='/es'
+                  typeElement={language === 'es' ? 'button' : 'a'}
+                  text={languageOptions.items.es}
+                  size='xl'
+                  rounded='full'
+                  variant={language === 'es' ? 'contained' : 'outlined'}
+                  className='w-32'
+                />
+                <ButtonComplete
+                  href='/en'
+                  typeElement={language === 'en' ? 'button' : 'a'}
+                  text={languageOptions.items.en}
+                  size='xl'
+                  rounded='full'
+                  variant={language === 'en' ? 'contained' : 'outlined'}
+                  className='w-32'
+                />
               </div>
             </div>
             <div className="pb-6 pt-16 grow flex justify-center items-end text-5xl text-primary-700 dark:text-white gap-8">

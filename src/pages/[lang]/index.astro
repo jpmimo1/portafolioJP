@@ -1,16 +1,24 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
 import AboutContent from "../../components/contentPage/AboutContent.astro";
+import Contact from "../../components/contentPage/Contact.astro";
+import Experience from "../../components/contentPage/Experience.astro";
 import HomeContent from "../../components/contentPage/HomeContent.astro";
 import Knowledge from "../../components/contentPage/Knowledge.astro";
-import Experience from "../../components/contentPage/Experience.astro";
 import Projects from "../../components/contentPage/Projects.astro";
-import Contact from "../../components/contentPage/Contact.astro";
+import Layout from "../../layouts/Layout.astro";
+import type { LanguagesContent } from "../../types/content";
 
-const language = "en";
+export const getStaticPaths = () => {
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
+};
+
+const { lang } = Astro.params;
+
+const language = lang as LanguagesContent;
 ---
 
-<Layout language="en">
+<Layout language={language}>
   <main>
     <HomeContent language={language} />
     <AboutContent language={language} />
