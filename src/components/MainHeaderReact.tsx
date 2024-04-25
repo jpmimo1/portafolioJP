@@ -1,26 +1,45 @@
-import React, { useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import type { LanguagesContent } from '../types/content';
-import { ContentPage } from '../data';
+import { ContentPage, socialMedias } from '../data';
 import SwitchTheme from './SwitchTheme';
 import ButtonComplete from './basic/ButtonComplete';
 
 interface Props {
-  language: LanguagesContent
+  language: LanguagesContent,
+  currentPath: string
 }
 
-const MainHeaderReact = ({ language }: Props) => {
+const MainHeaderReact = ({ language, currentPath }: Props) => {
   const [stateMenuResponsive, setStateMenuResponsive] = useState(false);
 
-  const menuItems = ContentPage[language].itemsHeader;
+  const menuItems = useMemo(() => ContentPage[language].itemsHeader, [language]);
 
-  const languageOptions = ContentPage[language].languages;
+  const languageOptions = useMemo(() => ContentPage[language].languages, [language]);
+
+  const contentPath = useMemo(() => {
+    const newContentPath = currentPath.replace(`/${language}`, '');
+    if (newContentPath === '/') {
+      return '';
+    }
+    return newContentPath;
+  }, [currentPath, language]);
+
+  const currentMenuItems = useMemo(() => {
+    if (contentPath === '') {
+      return menuItems;
+    } else {
+      return [menuItems[0]];
+    }
+  }, [contentPath, menuItems]);
 
   return (
     <header>
       <nav>
         <div className="flex justify-between items-center px-1 h-16 bg-white shadow-md fixed w-full z-20">
           <div className="flex justify-center items-center">
-            <span className="iconportafoliojp-iconjp text-primary-700 text-4xl flex justify-center items-center"></span>
+            <a href={`/${language}`}>
+              <span className="iconportafoliojp-iconjp text-primary-700 text-4xl flex justify-center items-center"></span>
+            </a>
           </div>
           <button
             className="iconportafoliojp-bars text-primary-700 text-2xl flex items-center justify-center p-1"
@@ -44,14 +63,17 @@ const MainHeaderReact = ({ language }: Props) => {
             </div>
             <ul className="flex flex-col px-10 py-2">
               {
-                menuItems.map((menuitem) => {
+                currentMenuItems.map((menuitem) => {
                   return (
                     <li className="py-4 px-2 border-primary-700 dark:border-white border-b" key={menuitem.title}>
                       <a
-                        onClick={() => {
-                          setTimeout(() => { setStateMenuResponsive(false); }, 500);
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const elementAnchor = e.target as HTMLAnchorElement;
+                          setStateMenuResponsive(false);
+                          setTimeout(() => { window.location.href = elementAnchor.href; }, 200);
                         }}
-                        href={menuitem.url}
+                        href={`/${language}${menuitem.url}`}
                         className='text-primary-700 dark:text-white flex items-center gap-6 text-xl text'>
                         <span className={`${menuitem.iconClass || ''} h-8 w-8 text-2xl flex items-center justify-center`}></span>
                         {menuitem.title}
@@ -65,7 +87,7 @@ const MainHeaderReact = ({ language }: Props) => {
               {languageOptions.title}
               <div className='flex gap-8'>
                 <ButtonComplete
-                  href='/es'
+                  href={`/es${contentPath}`}
                   typeElement={language === 'es' ? 'button' : 'a'}
                   text={languageOptions.items.es}
                   size='xl'
@@ -74,7 +96,7 @@ const MainHeaderReact = ({ language }: Props) => {
                   className='w-32'
                 />
                 <ButtonComplete
-                  href='/en'
+                  href={`/en${contentPath}`}
                   typeElement={language === 'en' ? 'button' : 'a'}
                   text={languageOptions.items.en}
                   size='xl'
@@ -85,8 +107,16 @@ const MainHeaderReact = ({ language }: Props) => {
               </div>
             </div>
             <div className="pb-6 pt-16 grow flex justify-center items-end text-5xl text-primary-700 dark:text-white gap-8">
-              <a><span className='iconportafoliojp-github'></span></a>
-              <a><span className='iconportafoliojp-linkedin'></span></a>
+              {
+                Object.keys(socialMedias).map((key) => {
+                  const keySocialMedias = key as keyof (typeof socialMedias);
+                  const socialMedia = socialMedias[keySocialMedias];
+                  return (
+                    <a key={keySocialMedias} href={socialMedia.url} title={socialMedia.name} target='_blank'>
+                      <span className={socialMedia.icon}></span>
+                    </a>);
+                })
+              }
             </div>
           </div>
         </div>

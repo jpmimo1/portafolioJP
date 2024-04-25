@@ -54,6 +54,12 @@ export interface ITechnology {
   name: string,
   url: string,
 }
+
+export interface ISocialMedia {
+  name: string,
+  url: string,
+  icon: string,
+}
 export interface IProject {
   title: string,
   type: string,

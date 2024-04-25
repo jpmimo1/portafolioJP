@@ -1,6 +1,7 @@
-import type { IContentLanguages, IProjectPageLanguages, ITechnology } from "../types/content";
+import type { IContentLanguages, IProjectPageLanguages, ISocialMedia, ITechnology } from "../types/content";
 
 type keysTechnologies = "HTML" | "CSS3" | "JavaScript" | "TypeScript" | "ReactJS" | "NextJS" | "Tailwind" | "Redux" | "NodeJS" | "Git" | "Selenium" | "Jest";
+type keysSocialMedias = 'GitHub' | 'LinkedIn';
 
 export const technologies: { [key in keysTechnologies]: ITechnology } = {
   HTML: { name: "HTML", url: "/assets/images/technologies/html5.svg" },
@@ -15,6 +16,11 @@ export const technologies: { [key in keysTechnologies]: ITechnology } = {
   Git: { name: "Git", url: "/assets/images/technologies/git.svg" },
   Selenium: { name: "Selenium", url: "/assets/images/technologies/selenium.svg" },
   Jest: { name: "Jest", url: "/assets/images/technologies/jest.svg" },
+};
+
+export const socialMedias: { [key in keysSocialMedias]: ISocialMedia } = {
+  GitHub: { name: 'GitHub', url: 'https://github.com/jpmimo1', icon: 'iconportafoliojp-github' },
+  LinkedIn: { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jean-paul-flores-auquimayta/', icon: 'iconportafoliojp-linkedin' }
 };
 
 export const ContentPage: IContentLanguages = {

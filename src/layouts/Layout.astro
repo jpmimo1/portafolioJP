@@ -13,6 +13,8 @@ interface Props {
 const { language } = Astro.props;
 
 const { title } = ContentPage[language || "es"];
+
+const currenPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -27,7 +29,7 @@ const { title } = ContentPage[language || "es"];
     <link href="/assets/icons/icons.css" rel="stylesheet" />
   </head>
   <body class="text-slate-700">
-    <MainHeaderReact language={language} client:load />
+    <MainHeaderReact language={language} currentPath={currenPath} client:load />
     <div class="pt-16">
       <slot />
     </div>

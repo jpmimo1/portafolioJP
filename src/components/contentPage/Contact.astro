@@ -1,5 +1,5 @@
 ---
-import { ContentPage } from "../../data";
+import { ContentPage, socialMedias } from "../../data";
 import type { LanguagesContent } from "../../types/content";
 import EmailCopy from "../EmailCopy";
 import ButtonComplete from "../basic/ButtonComplete";
@@ -22,8 +22,21 @@ const { title, paragraph, nameInput, emailInput, messageInput, sendText } =
     <p class="mb-7">{paragraph}</p>
     <div class="flex justify-between items-center mb-5">
       <div class="flex gap-2">
-        <IconButton typeElement="a" icon="iconportafoliojp-github" />
-        <IconButton typeElement="a" icon="iconportafoliojp-linkedin" />
+        {
+          Object.keys(socialMedias).map((key) => {
+            const keySocialMedias = key as keyof typeof socialMedias;
+            const socialMedia = socialMedias[keySocialMedias];
+            return (
+              <IconButton
+                typeElement="a"
+                icon={socialMedia.icon}
+                href={socialMedia.url}
+                target="_blank"
+                title={socialMedia.name}
+              />
+            );
+          })
+        }
       </div>
       <EmailCopy language={language} client:visible />
     </div>
