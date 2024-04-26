@@ -15,11 +15,13 @@ const { title, subTitle, button1, button2 } = ContentPage[language].homeContent;
 const TitleComponent = () => title;
 ---
 
-<section class="bg-white py-12 relative">
-  <div id="home-section" class="absolute bottom-full h-16"></div>
-  <div class="flex flex-col items-center px-4">
+<section class="bg-white dark:bg-primary-700 py-12 relative lg:h-[calc(100vh_-_5rem)] lg:flex lg:items-center lg:justify-center">
+  <div id="home-section" class="absolute bottom-full h-16 lg:h-20"></div>
+  <div
+    class="flex flex-col lg:flex-row lg:justify-center lg:items-start lg:gap-10 items-center px-4 lg:px-8 max-w-screen-xl mx-auto"
+  >
     <div
-      class="mb-4 w-40 h-40 rounded-full border-primary-700 border-4 relative overflow-hidden"
+      class="mb-4 w-40 h-40 lg:w-52 lg:h-52 rounded-full border-primary-700 border-4 relative overflow-hidden"
     >
       <img
         class="-top-[18%] absolute"
@@ -27,50 +29,52 @@ const TitleComponent = () => title;
         alt="jp-profile"
       />
     </div>
-    <h1
-      class="mb-2 flex flex-wrap justify-center gap-4 text-4xl whitespace-nowrap"
-    >
-      <TitleComponent />
-    </h1>
-    <h2 class="mb-4">{subTitle}</h2>
-    <div class="flex items-center gap-1 mb-5">
-      <ButtonComplete
-        typeElement="a"
-        href={button1.url}
-        icon1={button1.iconClass}
-        text={button1.text}
-        size="s"
-        variant="outlined"
-        bgColor="primary"
-        textColor="primary"
-      />
-      <ButtonComplete
-        typeElement="a"
-        href={button2.url}
-        icon1={button2.iconClass}
-        text={button2.text}
-        size="s"
-        variant="outlined"
-        bgColor="primary"
-        textColor="primary"
-      />
-    </div>
-    <div class="flex gap-4">
-      {
-        Object.keys(socialMedias).map((key) => {
-          const keySocialMedias = key as keyof typeof socialMedias;
-          const socialMedia = socialMedias[keySocialMedias];
-          return (
-            <IconButton
-              typeElement="a"
-              icon={socialMedia.icon}
-              href={socialMedia.url}
-              target="_blank"
-              title={socialMedia.name}
-            />
-          );
-        })
-      }
+    <div class="flex flex-col items-center lg:mt-7">
+      <h1
+        class="mb-2 flex flex-wrap justify-center gap-4 text-4xl whitespace-nowrap"
+      >
+        <TitleComponent />
+      </h1>
+      <h2 class="mb-4">{subTitle}</h2>
+      <div class="flex items-center gap-1 mb-5">
+        <ButtonComplete
+          typeElement="a"
+          href={button1.url}
+          icon1={button1.iconClass}
+          text={button1.text}
+          size="s"
+          variant="outlined"
+          bgColor="primary"
+          textColor="primary"
+        />
+        <ButtonComplete
+          typeElement="a"
+          href={button2.url}
+          icon1={button2.iconClass}
+          text={button2.text}
+          size="s"
+          variant="outlined"
+          bgColor="primary"
+          textColor="primary"
+        />
+      </div>
+      <div class="flex gap-4">
+        {
+          Object.keys(socialMedias).map((key) => {
+            const keySocialMedias = key as keyof typeof socialMedias;
+            const socialMedia = socialMedias[keySocialMedias];
+            return (
+              <IconButton
+                typeElement="a"
+                icon={socialMedia.icon}
+                href={socialMedia.url}
+                target="_blank"
+                title={socialMedia.name}
+              />
+            );
+          })
+        }
+      </div>
     </div>
   </div>
 </section>

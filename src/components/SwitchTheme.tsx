@@ -13,6 +13,7 @@ const SwitchTheme = () => {
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
+      console.log('entró');
       currentTheme.set("dark");
     } else {
       currentTheme.set("light");

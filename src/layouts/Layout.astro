@@ -30,7 +30,7 @@ const currenPath = Astro.url.pathname;
   </head>
   <body class="text-slate-700">
     <MainHeaderReact language={language} currentPath={currenPath} client:load />
-    <div class="pt-16">
+    <div class="pt-16 lg:pt-20">
       <slot />
     </div>
     <Footer language={language} />
