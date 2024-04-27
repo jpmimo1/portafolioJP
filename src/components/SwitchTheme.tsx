@@ -1,38 +1,16 @@
 import { useStore } from '@nanostores/react';
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { currentTheme } from '../stores/themeStore';
+import { $currentTheme } from '../stores/themeStore';
+import { useThemeAfterRender } from '../hooks/themeAfterRender';
 
 const SwitchTheme = () => {
-  const $currentTheme = useStore(currentTheme);
+  const theme = useThemeAfterRender();
 
   const timeOutSetState = useRef(0);
 
-  useEffect(() => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      console.log('entró');
-      currentTheme.set("dark");
-    } else {
-      currentTheme.set("light");
-    }
-  }, [])
-
-  useEffect(() => {
-    if ($currentTheme === 'light') {
-      localStorage.theme = 'light'
-      document.documentElement.classList.remove("dark");
-    } else {
-      localStorage.theme = 'dark'
-      document.documentElement.classList.add("dark");
-    }
-  }, [$currentTheme]);
-
   const switchState = useMemo(() => {
-    return $currentTheme === 'light';
-  }, [$currentTheme]);
+    return theme === 'light';
+  }, [theme]);
 
   const iconClass = useMemo(() => {
     return switchState ? 'iconportafoliojp-sunny' : 'iconportafoliojp-bedtime';
@@ -54,7 +32,7 @@ const SwitchTheme = () => {
             clearTimeout(timeOutSetState.current);
           }
           timeOutSetState.current = setTimeout(() => {
-            currentTheme.set(newChecked ? 'light' : 'dark');
+            $currentTheme.set(newChecked ? 'light' : 'dark');
           }, 100);
         }}
       />

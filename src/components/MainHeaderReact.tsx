@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import type { LanguagesContent } from '../types/content';
 import { ContentPage, socialMedias } from '../data';
 import SwitchTheme from './SwitchTheme';
 import ButtonComplete from './basic/ButtonComplete';
 import classNames from 'classnames';
 import { useStore } from '@nanostores/react';
-import { currentTheme } from '../stores/themeStore';
+import { $currentTheme } from '../stores/themeStore';
 
 interface Props {
   language: LanguagesContent,
@@ -14,7 +14,7 @@ interface Props {
 
 const MainHeaderReact = ({ language, currentPath }: Props) => {
   const [stateMenuResponsive, setStateMenuResponsive] = useState(false);
-  const $currentTheme = useStore(currentTheme);
+  const $currentThemeWeb = useStore($currentTheme);
 
   const menuItems = useMemo(() => ContentPage[language].itemsHeader, [language]);
 
@@ -39,7 +39,7 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
         {/* Menu responsive */}
         <div className='lg:hidden'>
           {/* Navbar menu responsive */}
-          <div className="flex justify-between items-center px-1 h-16 bg-white dark:bg-primary-800 shadow-md fixed w-full z-20">
+          <div className="flex justify-between items-center px-1 h-16 bg-white dark:bg-primary-800 shadow-md dark:shadow-none fixed w-full z-20 dark:border-b-2 dark:border-white/80">
             <div className="flex justify-center items-center">
               <a href={`/${language}/`}>
                 <span className="iconportafoliojp-iconjp text-primary-700 dark:text-white text-4xl flex justify-center items-center"></span>
@@ -109,8 +109,8 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
                 {languageOptions.title}
                 <div className='flex gap-8'>
                   <ButtonComplete
-                    bgColor={$currentTheme === 'light' ? 'primary' : 'white'}
-                    textColor={$currentTheme === 'light' ? 'white' : 'primary'}
+                    bgColor={$currentThemeWeb === 'light' ? 'primary' : 'white'}
+                    textColor={$currentThemeWeb === 'light' ? 'white' : 'primary'}
                     href={`/es${contentPath}`}
                     typeElement={language === 'es' ? 'button' : 'a'}
                     text={languageOptions.items.es}
@@ -120,8 +120,8 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
                     className='w-32'
                   />
                   <ButtonComplete
-                    bgColor={$currentTheme === 'light' ? 'primary' : 'white'}
-                    textColor={$currentTheme === 'light' ? 'white' : 'primary'}
+                    bgColor={$currentThemeWeb === 'light' ? 'primary' : 'white'}
+                    textColor={$currentThemeWeb === 'light' ? 'white' : 'primary'}
                     href={`/en${contentPath}`}
                     typeElement={language === 'en' ? 'button' : 'a'}
                     text={languageOptions.items.en}
@@ -149,7 +149,7 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
         </div>
 
         {/* Menu desktop */}
-        <div className='hidden lg:flex fixed shadow-md w-full z-40 backdrop-blur-md bg-white/90 dark:bg-primary-900/85'>
+        <div className='hidden lg:flex fixed shadow-md dark:shadow-none dark:border-b-2 dark:border-white/50 w-full z-40 backdrop-blur-md bg-white/90 dark:bg-primary-900/85'>
           <div className='h-20 w-full max-w-screen-xl mx-auto flex justify-between items-center px-8'>
             <a href={`/${language}/`}>
               <span className="iconportafoliojp-iconjp text-primary-700 dark:text-white text-5xl flex justify-center items-center"></span>
@@ -159,11 +159,11 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
                 {
                   currentMenuItems.map((menuItem) => {
                     return (
-                      <li className='flex'>
+                      <li className='flex' key={menuItem.title}>
                         <a
                           key={menuItem.title}
                           href={`/${language}/${menuItem.url}`}
-                          className='whitespace-nowrap text-sm text-slate-500 dark:text-white/80 font-semibold hover:text-primary-700 dark:hover:text-white transition-colors'
+                          className='whitespace-nowrap text-sm text-slate-500 dark:text-white/80 font-semibold hover:text-primary-700 dark:hover:text-primary-200 transition-colors'
                         >
                           {menuItem.title}
                         </a>
@@ -173,7 +173,7 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
                 }
               </ul>
               <a
-                className='flex items-end gap-2 text-sm text-slate-500 dark:text-white/80 font-semibold hover:text-primary-700 dark:hover:text-white'
+                className='flex items-end gap-2 text-sm text-slate-500 dark:text-white/80 font-semibold hover:text-primary-700 dark:hover:text-primary-200'
                 title={language === 'es' ? 'Ingles' : 'Spanish'}
                 href={language === 'es' ? '/en/' : '/es/'}
               >

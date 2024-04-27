@@ -29,14 +29,37 @@ const currenPath = Astro.url.pathname;
     <link href="/assets/icons/icons.css" rel="stylesheet" />
   </head>
   <body class="text-slate-700">
+    <script>
+      import { $currentTheme } from "../stores/themeStore";
+
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        console.log("dark");
+        $currentTheme.set("dark");
+      } else {
+        console.log("light");
+        $currentTheme.set("light");
+      }
+
+      $currentTheme.subscribe((value, oldValue) => {
+        if (value !== oldValue) {
+          if (value === "light") {
+            localStorage.theme = "light";
+            document.documentElement.classList.remove("dark");
+          } else {
+            localStorage.theme = "dark";
+            document.documentElement.classList.add("dark");
+          }
+        }
+      });
+    </script>
     <MainHeaderReact language={language} currentPath={currenPath} client:load />
-    <div class="pt-16 lg:pt-20">
+    <div class="pt-16 lg:pt-20 dark:bg-primary-800">
       <slot />
     </div>
     <Footer language={language} />
   </body>
 </html>
-
-<script>
-  import { currentTheme } from "../stores/themeStore";
-</script>

@@ -36,7 +36,7 @@ export const ContentPage: IContentLanguages = {
     ],
     languages: { title: 'Idiomas', items: { en: 'Ingles', es: 'Español' } },
     homeContent: {
-      title: <>Hola, soy <div className="text-primary-700">Jean Paul</div></>,
+      title: <>Hola, soy <div className="text-primary-700 dark:text-primary-300">Jean Paul</div></>,
       subTitle: 'Desarrollador Front-end',
       button1: {
         text: 'Contáctame',
@@ -287,7 +287,7 @@ export const ContentPage: IContentLanguages = {
     ],
     languages: { title: 'Languages', items: { en: 'English', es: 'Spanish' } },
     homeContent: {
-      title: <>Hello, I'm <div className="text-primary-700">Jean Paul</div></>,
+      title: <>Hello, I'm <div className="text-primary-700 dark:text-primary-300">Jean Paul</div></>,
       subTitle: 'Front-end developer',
       button1: {
         text: 'Contact me',

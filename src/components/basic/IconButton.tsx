@@ -19,7 +19,7 @@ type Props = ButtonAnchor | ButtonNormal;
 const colorStyles: { [key in bgColors]: string } = {
   primary: 'text-primary-700/70 hover:text-primary-700/90 active:text-primary-700',
   secondary: 'text-secondary-700/70 hover:text-secondary-700/90 active:text-secondary-700',
-  white: 'text-white-700/70 hover:text-white-700/90 active:text-white-700',
+  white: 'text-white/70 hover:text-white/90 active:text-white',
 }
 
 const baseStyles = 'w-9 h-9 flex justify-center items-center rounded-full transition-colors';
@@ -34,8 +34,14 @@ const IconButton = (props: Props) => {
     ...buttonProps
   } = props;
 
-  const classNameStyles = classNames(baseStyles, colorStyles[bgColor]);
-  const iconStyles = classNames(icon, baseIconStyles);
+  const classNameStyles = useMemo(() => {
+    return classNames(baseStyles, colorStyles[bgColor]);
+  }, [bgColor]);
+
+
+  const iconStyles = useMemo(() => {
+    return classNames(icon, baseIconStyles)
+  }, [icon]);
 
 
   const contentInnerButton = useMemo(() => {
