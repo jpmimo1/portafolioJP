@@ -12,11 +12,11 @@ const { language } = Astro.props;
 const { title, jobs } = ContentPage[language].experienceContent;
 ---
 
-<section class="bg-primary-700 text-white py-12 relative">
-  <div id="experience-section" class="absolute bottom-full h-16"></div>
-  <div class="px-4">
-    <h3 class="text-4xl mb-5">{title}</h3>
-    <div class="flex flex-col">
+<section class="bg-primary-700 dark:bg-slate-600 text-white py-12 lg:py-24 relative">
+  <div id="experience-section" class="absolute bottom-full h-16 lg:h-20"></div>
+  <div class="px-4 max-w-screen-xl mx-auto lg:px-8">
+    <h3 class="text-4xl mb-5 dark:text-primary-200 lg:text-5xl lg:mb-8">{title}</h3>
+    <div class="flex flex-col max-w-screen-md mx-auto">
       {
         jobs.map((job) => {
           return <JobTimeLine job={job} />;

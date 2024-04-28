@@ -1,10 +1,10 @@
 ---
 import AboutContent from "../../components/contentPage/AboutContent.astro";
-import Contact from "../../components/contentPage/Contact.astro";
+import Contact from "../../components/contentPage/Contact";
 import Experience from "../../components/contentPage/Experience.astro";
 import HomeContent from "../../components/contentPage/HomeContent.tsx";
 import Knowledge from "../../components/contentPage/Knowledge.astro";
-import Projects from "../../components/contentPage/Projects.astro";
+import Projects from "../../components/contentPage/Projects.tsx";
 import Layout from "../../layouts/Layout.astro";
 import type { LanguagesContent } from "../../types/content";
 
@@ -19,11 +19,11 @@ const language = lang as LanguagesContent;
 
 <Layout language={language}>
   <main>
-    <HomeContent language={language} client:load/>
+    <HomeContent language={language} client:load />
     <AboutContent language={language} />
     <Knowledge language={language} />
     <Experience language={language} />
-    <Projects language={language} />
-    <Contact language={language} />
+    <Projects language={language} client:visible />
+    <Contact language={language} client:visible />
   </main>
 </Layout>

@@ -14,7 +14,9 @@ const technologiesList = Object.keys(technologies).map((key) => {
         technologiesList.map(({ name, url }) => {
           return (
             <div class="splide__slide flex justify-center">
-              <img src={url} title={name} alt={name} class="w-24" />
+              <div class="dark:bg-white dark:rounded-3xl dark:border-4 dark:border-primary-200/25 p-4">
+                <img src={url} title={name} alt={name} class="w-20" />
+              </div>
             </div>
           );
         })
@@ -32,6 +34,14 @@ const technologiesList = Object.keys(technologies).map((key) => {
     pagination: false,
     type: "loop",
     mediaQuery: "min",
+    breakpoints: {
+      768: {
+        perPage: 4,
+      },
+      1024: {
+        perPage: 5,
+      },
+    },
     perPage: 3,
   }).mount({ AutoScroll });
 </script>

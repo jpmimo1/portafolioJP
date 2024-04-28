@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import type { LanguagesContent } from '../types/content';
 import classNames from 'classnames';
+import { useThemeAfterRender } from '../hooks/themeAfterRender';
 
 interface Props {
   language: LanguagesContent
@@ -13,6 +14,7 @@ const textCopied = {
 }
 
 const EmailCopy = ({ language }: Props) => {
+  const theme = useThemeAfterRender();
   const [emailCopied, setEmailCopied] = useState<boolean>(false);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const EmailCopy = ({ language }: Props) => {
 
   return (
     <div
-      className="flex gap-2 cursor-pointer relative"
+      className="flex gap-2 cursor-pointer relative dark:text-white"
       onClick={() => {
         navigator.clipboard.writeText(email);
         setEmailCopied(true);
@@ -39,7 +41,7 @@ const EmailCopy = ({ language }: Props) => {
         {textCopied[language]}
       </div> : null}
       <span
-        className={classNames("iconportafoliojp-mail", "text-2xl text-primary-600")}
+        className={classNames("iconportafoliojp-mail", "text-2xl text-primary-600 dark:text-primary-200")}
       ></span>
       <div>{email}</div>
     </div>

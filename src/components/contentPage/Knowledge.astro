@@ -12,13 +12,19 @@ const { language } = Astro.props;
 const { title, paragraph } = ContentPage[language].knoledgeContent;
 ---
 
-<section class="bg-white py-12 relative">
-  <div id="knowledge-section" class="absolute bottom-full h-16"></div>
-  <div class="flex flex-col px-4">
-    <h3 class="text-primary-700 text-4xl mb-5">{title}</h3>
-    <p class="mb-9">
+<section class="bg-white py-12 lg:py-24 relative dark:bg-primary-800">
+  <div id="knowledge-section" class="absolute bottom-full h-16 lg:h-20"></div>
+  <div class="flex flex-col px-4 max-w-screen-xl mx-auto lg:px-8">
+    <h3
+      class="text-primary-700 dark:text-primary-200 text-4xl lg:text-5xl mb-5 lg:mb-8"
+    >
+      {title}
+    </h3>
+    <p class="mb-9 lg:mb-16 dark:text-white">
       {paragraph}
     </p>
   </div>
-  <SliderKnowledge />
+  <div class="lg:max-w-screen-xl lg:mx-auto lg:px-8">
+    <SliderKnowledge />
+  </div>
 </section>
