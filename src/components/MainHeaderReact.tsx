@@ -6,6 +6,7 @@ import ButtonComplete from './basic/ButtonComplete';
 import classNames from 'classnames';
 import { useStore } from '@nanostores/react';
 import { $currentTheme } from '../stores/themeStore';
+import { useThemeAfterRender } from '../hooks/themeAfterRender';
 
 interface Props {
   language: LanguagesContent,
@@ -14,7 +15,7 @@ interface Props {
 
 const MainHeaderReact = ({ language, currentPath }: Props) => {
   const [stateMenuResponsive, setStateMenuResponsive] = useState(false);
-  const $currentThemeWeb = useStore($currentTheme);
+  const theme = useThemeAfterRender();
 
   const menuItems = useMemo(() => ContentPage[language].itemsHeader, [language]);
 
@@ -109,8 +110,8 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
                 {languageOptions.title}
                 <div className='flex gap-8'>
                   <ButtonComplete
-                    bgColor={$currentThemeWeb === 'light' ? 'primary' : 'white'}
-                    textColor={$currentThemeWeb === 'light' ? 'white' : 'primary'}
+                    bgColor={theme === 'light' ? 'primary' : 'white'}
+                    textColor={theme === 'light' ? 'white' : 'primary'}
                     href={`/es${contentPath}`}
                     typeElement={language === 'es' ? 'button' : 'a'}
                     text={languageOptions.items.es}
@@ -120,8 +121,8 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
                     className='w-32'
                   />
                   <ButtonComplete
-                    bgColor={$currentThemeWeb === 'light' ? 'primary' : 'white'}
-                    textColor={$currentThemeWeb === 'light' ? 'white' : 'primary'}
+                    bgColor={theme === 'light' ? 'primary' : 'white'}
+                    textColor={theme === 'light' ? 'white' : 'primary'}
                     href={`/en${contentPath}`}
                     typeElement={language === 'en' ? 'button' : 'a'}
                     text={languageOptions.items.en}
