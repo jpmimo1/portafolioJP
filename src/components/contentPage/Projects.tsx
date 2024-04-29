@@ -1,6 +1,6 @@
 
 import { useMemo } from 'react'
-import { ContentPage } from "../../data";
+import { ContentPage, projects } from "../../data";
 import type { LanguagesContent } from "../../types/content";
 import CardProject from "../CardProject";
 import ButtonComplete from "../basic/ButtonComplete";
@@ -15,7 +15,6 @@ const Projects = ({ language }: Props) => {
   const {
     title,
     paragraph,
-    projects,
     seeProjectIcon,
     seeProjectText,
     seeMoreIcon,
@@ -36,8 +35,8 @@ const Projects = ({ language }: Props) => {
               .map((project) => {
                 return (
                   <CardProject
-                    key={project.title}
-                    project={project}
+                    key={project[language].title}
+                    project={project[language]}
                     language={language}
                     seeProjectIcon={seeProjectIcon}
                     seeProjectText={seeProjectText}

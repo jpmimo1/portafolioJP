@@ -8,9 +8,10 @@ import "@splidejs/splide/css";
 
 interface Props {
   language: LanguagesContent;
+  changeLanguageUrl?: string;
 }
 
-const { language } = Astro.props;
+const { language, changeLanguageUrl } = Astro.props;
 
 const { title } = ContentPage[language || "es"];
 
@@ -37,10 +38,8 @@ const currenPath = Astro.url.pathname;
         (!("theme" in localStorage) &&
           window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
-        console.log("dark");
         $currentTheme.set("dark");
       } else {
-        console.log("light");
         $currentTheme.set("light");
       }
 
@@ -56,7 +55,12 @@ const currenPath = Astro.url.pathname;
         }
       });
     </script>
-    <MainHeaderReact language={language} currentPath={currenPath} client:load />
+    <MainHeaderReact
+      language={language}
+      currentPath={currenPath}
+      changeLanguageUrl={changeLanguageUrl}
+      client:load
+    />
     <div class="pt-16 lg:pt-20 dark:bg-primary-800">
       <slot />
     </div>

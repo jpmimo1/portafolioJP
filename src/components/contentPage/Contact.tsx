@@ -61,7 +61,7 @@ const Contact = ({ language }: Props) => {
                 </label>
                 <input
                   id="full-name-input"
-                  className="border-auxiliar1-200 focus-visible:outline-primary-700 border px-2 py-1 rounded-md placeholder:text-auxiliar1-200"
+                  className="border-auxiliar1-200 focus-visible:outline-primary-700 border px-2 lg:px-3 py-1 lg:py-2 rounded-md placeholder:text-auxiliar1-200"
                   type="text"
                   placeholder={nameInput.placeholder}
                   required
@@ -75,7 +75,7 @@ const Contact = ({ language }: Props) => {
                 <input
                   type="email"
                   id="email-input"
-                  className="border-auxiliar1-200 focus-visible:outline-primary-700 border px-2 py-1 rounded-md placeholder:text-auxiliar1-200"
+                  className="border-auxiliar1-200 focus-visible:outline-primary-700 border px-2 py-1 lg:px-3 lg:py-2 rounded-md placeholder:text-auxiliar1-200"
                   placeholder={emailInput.placeholder}
                   required
                 />
@@ -88,7 +88,7 @@ const Contact = ({ language }: Props) => {
               </label>
               <textarea
                 id="message-input"
-                className="border-auxiliar1-200 focus-visible:outline-primary-700 border px-2 py-1 rounded-md placeholder:text-auxiliar1-200 h-32"
+                className="border-auxiliar1-200 focus-visible:outline-primary-700 border px-2 py-1 lg:px-3 lg:py-2 rounded-md placeholder:text-auxiliar1-200 h-32"
                 placeholder={messageInput.placeholder}
                 required></textarea>
             </div>

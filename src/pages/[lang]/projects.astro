@@ -1,8 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import type { LanguagesContent } from "../../types/content";
-import { ContentPage, ContentProjectPage } from "../../data";
+import { ContentPage, ContentProjectPage, projects } from "../../data";
 import CardProject from "../../components/CardProject";
+import Contact from "../../components/contentPage/Contact";
 
 export const getStaticPaths = () => {
   return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
@@ -12,23 +13,29 @@ const { lang } = Astro.params;
 const language = lang as LanguagesContent;
 
 const { title, paragraph } = ContentProjectPage[language];
-const { projects, seeProjectIcon, seeProjectText } =
-  ContentPage[language].projectContent;
+const { seeProjectIcon, seeProjectText } = ContentPage[language].projectContent;
 ---
 
 <Layout language={language}>
-  <main>
-    <div class="py-12">
-      <div class="px-4">
-        <h1 class="text-primary-700 text-4xl mb-5">{title}</h1>
-        <p class="mb-6">{paragraph}</p>
-        <div class="grid grid-cols-1 gap-4">
+  <main class="">
+    <div class="bg-slate-100 dark:bg-primary-800 py-12 lg:py-24">
+      <div class="px-4 max-w-screen-xl mx-auto lg:px-8">
+        <h1
+          class="text-primary-700 dark:text-primary-200 text-4xl lg:text-5xl mb-5 lg:mb-8"
+        >
+          {title}
+        </h1>
+        <p class="mb-6 dark:text-white lg:mb-12">{paragraph}</p>
+        <div
+          class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+        >
           {
             projects.map((project, i) => {
               return (
                 <CardProject
+                  client:visible
                   language={language}
-                  project={project}
+                  project={project[language]}
                   seeProjectText={seeProjectText}
                   seeProjectIcon={seeProjectIcon}
                 />
@@ -38,5 +45,6 @@ const { projects, seeProjectIcon, seeProjectText } =
         </div>
       </div>
     </div>
+    <Contact language={language} />
   </main>
 </Layout>

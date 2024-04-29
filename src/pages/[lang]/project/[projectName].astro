@@ -1,0 +1,56 @@
+---
+import { languages, projects } from "../../../data";
+import Layout from "../../../layouts/Layout.astro";
+import type { LanguagesContent } from "../../../types/content";
+import { generateUrl } from "../../../utils/generateUrl";
+
+interface IPathsData {
+  params: { lang: string; projectName: string };
+  props: { keyProject: number };
+}
+
+export const getStaticPaths = () => {
+  const paths = languages.reduce<IPathsData[]>((pathsArray, language) => {
+    const nLanguage = language as LanguagesContent;
+
+    const pathsLanguageProjects = projects.map((project, i) => {
+      const projectLanguage = project[nLanguage];
+      const projectUrl = generateUrl(projectLanguage.title);
+
+      return {
+        params: { lang: language, projectName: projectUrl },
+        props: { keyProject: i },
+      };
+    });
+
+    return [...pathsArray, ...pathsLanguageProjects];
+  }, []);
+  console.log(paths);
+  return paths;
+};
+
+const { lang } = Astro.params;
+const { keyProject } = Astro.props;
+const language = lang as LanguagesContent;
+
+const currentProject = projects[keyProject];
+const { title } = currentProject[language];
+
+const changeLanguage = language === "es" ? "en" : "es";
+
+const changeLanguageProject = currentProject[changeLanguage];
+
+const changeLanguageUrl = `/${changeLanguage}/project/${generateUrl(changeLanguageProject.title)}`;
+---
+
+<Layout language={language} changeLanguageUrl={changeLanguageUrl}>
+  <main>
+    <div>
+      <div>
+        <h1>
+          {title}
+        </h1>
+      </div>
+    </div>
+  </main>
+</Layout>

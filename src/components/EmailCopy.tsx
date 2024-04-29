@@ -14,7 +14,6 @@ const textCopied = {
 }
 
 const EmailCopy = ({ language }: Props) => {
-  const theme = useThemeAfterRender();
   const [emailCopied, setEmailCopied] = useState<boolean>(false);
 
   useEffect(() => {

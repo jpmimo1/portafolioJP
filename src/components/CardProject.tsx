@@ -22,7 +22,7 @@ const CardProject = ({ project, seeProjectIcon, seeProjectText, language, classN
   const theme = useThemeAfterRender();
   const { title, technologiesUsed, type, technologiesTitle, imageUrl, description } = project;
 
-  const urlProject = `/${language}/projects/${generateUrl(title)}`;
+  const urlProject = `/${language}/project/${generateUrl(title)}`;
 
   const sliderRef = useRef<HTMLDivElement>(null);
 

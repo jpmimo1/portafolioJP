@@ -10,10 +10,11 @@ import { useThemeAfterRender } from '../hooks/themeAfterRender';
 
 interface Props {
   language: LanguagesContent,
-  currentPath: string
+  currentPath: string,
+  changeLanguageUrl?: string,
 }
 
-const MainHeaderReact = ({ language, currentPath }: Props) => {
+const MainHeaderReact = ({ language, currentPath, changeLanguageUrl }: Props) => {
   const [stateMenuResponsive, setStateMenuResponsive] = useState(false);
   const theme = useThemeAfterRender();
 
@@ -112,7 +113,7 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
                   <ButtonComplete
                     bgColor={theme === 'light' ? 'primary' : 'white'}
                     textColor={theme === 'light' ? 'white' : 'primary'}
-                    href={`/es${contentPath}`}
+                    href={changeLanguageUrl || `/es${contentPath}`}
                     typeElement={language === 'es' ? 'button' : 'a'}
                     text={languageOptions.items.es}
                     size='xl'
@@ -125,7 +126,7 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
                     textColor={theme === 'light' ? 'white' : 'primary'}
                     href={`/en${contentPath}`}
                     typeElement={language === 'en' ? 'button' : 'a'}
-                    text={languageOptions.items.en}
+                    text={changeLanguageUrl || languageOptions.items.en}
                     size='xl'
                     rounded='full'
                     variant={language === 'en' ? 'contained' : 'outlined'}
@@ -176,7 +177,7 @@ const MainHeaderReact = ({ language, currentPath }: Props) => {
               <a
                 className='flex items-end gap-2 text-sm text-slate-500 dark:text-white/80 font-semibold hover:text-primary-700 dark:hover:text-primary-200'
                 title={language === 'es' ? 'Ingles' : 'Spanish'}
-                href={language === 'es' ? '/en/' : '/es/'}
+                href={changeLanguageUrl || (language === 'es' ? `/en${contentPath}` : `/es${contentPath}`)}
               >
                 <span className='iconportafoliojp-language leading-3' />
                 {language === 'es' ? 'Ingles' : 'Spanish'}
