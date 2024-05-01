@@ -92,3 +92,12 @@
 .iconportafoliojp-language:before {
   content: "\72";
 }
+.iconportafoliojp-external-link:before {
+  content: "\73";
+}
+.iconportafoliojp-link:before {
+  content: "\74";
+}
+.iconportafoliojp-github-1:before {
+  content: "\75";
+}

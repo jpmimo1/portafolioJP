@@ -1,8 +1,11 @@
 ---
-import { languages, projects } from "../../../data";
+import Contact from "../../../components/contentPage/Contact";
+import { languages, projects, ContentPage } from "../../../data";
 import Layout from "../../../layouts/Layout.astro";
 import type { LanguagesContent } from "../../../types/content";
 import { generateUrl } from "../../../utils/generateUrl";
+import ButtonsProject from "../../../components/ButtonsProject";
+import OtherProjects from "../../../components/OtherProjects";
 
 interface IPathsData {
   params: { lang: string; projectName: string };
@@ -25,7 +28,6 @@ export const getStaticPaths = () => {
 
     return [...pathsArray, ...pathsLanguageProjects];
   }, []);
-  console.log(paths);
   return paths;
 };
 
@@ -33,24 +35,112 @@ const { lang } = Astro.params;
 const { keyProject } = Astro.props;
 const language = lang as LanguagesContent;
 
+const { seeMoreIcon, seeMoreText, seeProjectIcon, seeProjectText } =
+  ContentPage[language].projectContent;
+
 const currentProject = projects[keyProject];
-const { title } = currentProject[language];
+const {
+  title,
+  type,
+  gitHubUrl,
+  viewUrl,
+  imageUrl,
+  description,
+  technologiesUsed,
+} = currentProject[language];
 
 const changeLanguage = language === "es" ? "en" : "es";
 
 const changeLanguageProject = currentProject[changeLanguage];
 
 const changeLanguageUrl = `/${changeLanguage}/project/${generateUrl(changeLanguageProject.title)}`;
+
+const labelTechnologies: { [key in LanguagesContent]: string } = {
+  en: "Technologies used",
+  es: "Technologías usadas",
+};
+
+const labelOtherProjects: { [key in LanguagesContent]: string } = {
+  en: "Other projects",
+  es: "Otros proyectos",
+};
+
+const projectsToShow = projects
+  .filter((_, i) => i !== keyProject)
+  .filter((_, i) => i < 3);
 ---
 
 <Layout language={language} changeLanguageUrl={changeLanguageUrl}>
   <main>
-    <div>
-      <div>
-        <h1>
-          {title}
-        </h1>
+    <section class="bg-slate-100 dark:bg-primary-800 py-12 lg:py-24">
+      <div class="px-4 max-w-screen-xl mx-auto lg:px-8">
+        <div class="lg:flex lg:justify-between lg:items-center lg:mb-4">
+          <h1
+            class="text-primary-700 dark:text-primary-200 text-4xl lg:text-5xl mb-1 lg:mb-0"
+          >
+            {title}
+          </h1>
+          <div class="flex justify-between items-end mb-6 lg:mb-0">
+            <span class="text-lg font-semibold dark:text-white lg:hidden">
+              {type}
+            </span>
+            <ButtonsProject
+              gitHubUrl={gitHubUrl}
+              viewUrl={viewUrl}
+              client:visible
+            />
+          </div>
+        </div>
+
+        <span
+          class="text-xl font-semibold dark:text-white hidden lg:block lg:mb-8"
+        >
+          {type}
+        </span>
+
+        <div class="md:flex md:gap-4 lg:gap-8 md:mb-8 lg:mb-14">
+          <div
+            class="md:mb-0 rounded-md overflow-hidden aspect-[16/10] mb-8 border md:w-[450px] shrink-0 lg:w-[750px]"
+          >
+            <img
+              src={imageUrl}
+              alt={title}
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="md:relative md:grow">
+            <p
+              class="mb-7 dark:text-white md:grow md:mb-0 md:absolute md:top-0 md:left-0 md:w-full md:h-full overflow-y-auto"
+            >
+              {description}
+            </p>
+          </div>
+        </div>
+        <div>
+          <span
+            class="text-primary-700 dark:text-primary-200 font-semibold mb-6 block lg:text-lg"
+            >{labelTechnologies[language]}</span
+          >
+          <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
+            {
+              technologiesUsed.map(({ name, url }) => {
+                return (
+                  <div class="flex justify-center">
+                    <img
+                      src={url}
+                      alt={name}
+                      title={name}
+                      class="w-12 md:w-14"
+                    />
+                  </div>
+                );
+              })
+            }
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+    <OtherProjects language={language} keyProject={keyProject} client:visible/>
+    <Contact language={language} />
   </main>
 </Layout>

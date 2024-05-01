@@ -124,9 +124,9 @@ const MainHeaderReact = ({ language, currentPath, changeLanguageUrl }: Props) =>
                   <ButtonComplete
                     bgColor={theme === 'light' ? 'primary' : 'white'}
                     textColor={theme === 'light' ? 'white' : 'primary'}
-                    href={`/en${contentPath}`}
+                    href={changeLanguageUrl || `/en${contentPath}`}
                     typeElement={language === 'en' ? 'button' : 'a'}
-                    text={changeLanguageUrl || languageOptions.items.en}
+                    text={languageOptions.items.en}
                     size='xl'
                     rounded='full'
                     variant={language === 'en' ? 'contained' : 'outlined'}

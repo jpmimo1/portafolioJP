@@ -63,6 +63,8 @@ export interface ISocialMedia {
 export interface IProject {
   title: string,
   type: string,
+  gitHubUrl?: string,
+  viewUrl?: string,
   imageUrl: string,
   description: string,
   technologiesTitle: string,
@@ -71,7 +73,6 @@ export interface IProject {
 interface IMyProjects {
   title: string,
   paragraph: string,
-  projects: IProject[],
   seeProjectText: string,
   seeProjectIcon: string,
   seeMoreText: string,

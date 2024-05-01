@@ -105,153 +105,6 @@ export const ContentPage: IContentLanguages = {
     projectContent: {
       title: 'Mis proyectos',
       paragraph: 'Estos son algunos de mis proyectos.',
-      projects: [{
-        title: 'Proyecto 1 Delivery a Cusco',
-        type: 'Frontend',
-        description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-        imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-        technologiesTitle: 'Tecnologías usadas:',
-        technologiesUsed: [
-          technologies.HTML,
-          technologies.CSS3,
-          technologies.JavaScript,
-        ]
-      }, {
-        title: 'Proyecto 2 Delivery a Cusco',
-        type: 'Frontend',
-        description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-        imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-        technologiesTitle: 'Tecnologías usadas:',
-        technologiesUsed: [
-          technologies.HTML,
-          technologies.CSS3,
-          technologies.JavaScript,
-          technologies.ReactJS,
-          technologies.Redux,
-          technologies.Tailwind,
-          technologies.TypeScript
-        ]
-      }, {
-        title: 'Proyecto 3 Delivery a Cusco',
-        type: 'Frontend',
-        description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-        imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-        technologiesTitle: 'Tecnologías usadas:',
-        technologiesUsed: [
-          technologies.HTML,
-          technologies.CSS3,
-          technologies.JavaScript,
-          technologies.ReactJS,
-          technologies.Redux,
-          technologies.Tailwind,
-          technologies.TypeScript
-        ]
-      }, {
-        title: 'Proyecto 4 Delivery a Cusco',
-        type: 'Frontend',
-        description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-        imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-        technologiesTitle: 'Tecnologías usadas:',
-        technologiesUsed: [
-          technologies.HTML,
-          technologies.CSS3,
-          technologies.JavaScript,
-          technologies.ReactJS,
-          technologies.Redux,
-          technologies.Tailwind,
-          technologies.TypeScript
-        ]
-      }, {
-        title: 'Proyecto 5 Delivery a Cusco',
-        type: 'Frontend',
-        description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-        imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-        technologiesTitle: 'Tecnologías usadas:',
-        technologiesUsed: [
-          technologies.HTML,
-          technologies.CSS3,
-          technologies.JavaScript,
-          technologies.ReactJS,
-          technologies.Redux,
-          technologies.Tailwind,
-          technologies.TypeScript
-        ]
-      }, {
-        title: 'Proyecto 6 Delivery a Cusco',
-        type: 'Frontend',
-        description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-        imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-        technologiesTitle: 'Tecnologías usadas:',
-        technologiesUsed: [
-          technologies.HTML,
-          technologies.CSS3,
-          technologies.JavaScript,
-          technologies.ReactJS,
-          technologies.Redux,
-          technologies.Tailwind,
-          technologies.TypeScript
-        ]
-      }, {
-        title: 'Proyecto 7 Delivery a Cusco',
-        type: 'Frontend',
-        description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-        imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-        technologiesTitle: 'Tecnologías usadas:',
-        technologiesUsed: [
-          technologies.HTML,
-          technologies.CSS3,
-          technologies.JavaScript,
-          technologies.ReactJS,
-          technologies.Redux,
-          technologies.Tailwind,
-          technologies.TypeScript
-        ]
-      }, {
-        title: 'Proyecto 8 Delivery a Cusco',
-        type: 'Frontend',
-        description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-        imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-        technologiesTitle: 'Tecnologías usadas:',
-        technologiesUsed: [
-          technologies.HTML,
-          technologies.CSS3,
-          technologies.JavaScript,
-          technologies.ReactJS,
-          technologies.Redux,
-          technologies.Tailwind,
-          technologies.TypeScript
-        ]
-      }, {
-        title: 'Proyecto 9 Delivery a Cusco',
-        type: 'Frontend',
-        description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-        imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-        technologiesTitle: 'Tecnologías usadas:',
-        technologiesUsed: [
-          technologies.HTML,
-          technologies.CSS3,
-          technologies.JavaScript,
-          technologies.ReactJS,
-          technologies.Redux,
-          technologies.Tailwind,
-          technologies.TypeScript
-        ]
-      }, {
-        title: 'Proyecto 10 Delivery a Cusco',
-        type: 'Frontend',
-        description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-        imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-        technologiesTitle: 'Tecnologías usadas:',
-        technologiesUsed: [
-          technologies.HTML,
-          technologies.CSS3,
-          technologies.JavaScript,
-          technologies.ReactJS,
-          technologies.Redux,
-          technologies.Tailwind,
-          technologies.TypeScript
-        ]
-      }],
       seeProjectText: 'Ver proyecto',
       seeProjectIcon: 'iconportafoliojp-visibility',
       seeMoreText: 'Ver más...',
@@ -356,7 +209,6 @@ export const ContentPage: IContentLanguages = {
     projectContent: {
       title: 'My proyects',
       paragraph: 'These are some of my projects.',
-      projects: [],
       seeProjectText: 'See project',
       seeProjectIcon: 'iconportafoliojp-visibility',
       seeMoreText: 'See more...',
@@ -404,6 +256,8 @@ export const projects: Array<{ [key in LanguagesContent]: IProject }> = [
       description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
       imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
       technologiesTitle: 'Tecnologías usadas:',
+      gitHubUrl: 'https://github.com/jpmimo1/gallery',
+      viewUrl: 'https://gallery-beta-inky.vercel.app/',
       technologiesUsed: [
         technologies.HTML,
         technologies.CSS3,
@@ -416,6 +270,8 @@ export const projects: Array<{ [key in LanguagesContent]: IProject }> = [
       description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
       imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
       technologiesTitle: 'Tecnologías usadas:',
+      gitHubUrl: 'https://github.com/jpmimo1/gallery',
+      viewUrl: 'https://gallery-beta-inky.vercel.app/',
       technologiesUsed: [
         technologies.HTML,
         technologies.CSS3,
