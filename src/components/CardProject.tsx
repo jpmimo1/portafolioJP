@@ -48,20 +48,24 @@ const CardProject = ({ project, seeProjectIcon, seeProjectText, language, classN
       data-technologieslength={technologiesUsed.length}
     >
       <div className="flex justify-between gap-5 text-xl mb-3">
-        <h4
+        <a
+          href={urlProject}
           title={title}
           className="text-primary-700 dark:text-primary-200 font-bold whitespace-nowrap overflow-hidden text-ellipsis"
         >
           {title}
-        </h4>
+        </a>
         <span className='dark:text-white'>{type}</span>
       </div>
       <div className="rounded-md overflow-hidden aspect-[16/10] mb-4 border">
-        <img src={imageUrl} alt={title} className="h-full w-full object-cover" />
+        <img
+          src={typeof imageUrl === 'string' ? imageUrl : imageUrl[0]} alt={title}
+          className="h-full w-full object-cover"
+        />
       </div>
       <p className="line-clamp-4 mb-6 dark:text-white">{description}</p>
       <h6 className="text-primary-700 dark:text-primary-200 mb-3 font-bold">{technologiesTitle}</h6>
-      <div ref={sliderRef} className={classNames(["slider-card-technology", "splide", "mb-6"])} role="group">
+      <div ref={sliderRef} className={classNames(["splide", "mb-6"])} role="group">
         <div className="splide__track">
           <div className="splide__list">
             {
@@ -82,8 +86,8 @@ const CardProject = ({ project, seeProjectIcon, seeProjectText, language, classN
         typeElement="a"
         href={urlProject}
         variant="outlined"
-        bgColor={theme==='light'?'primary':'white'}
-        textColor={theme==='light'?'white':'primary'}
+        bgColor={theme === 'light' ? 'primary' : 'white'}
+        textColor={theme === 'light' ? 'white' : 'primary'}
       />
     </div>
   );

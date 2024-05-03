@@ -10,10 +10,6 @@ interface Props {
 const ButtonsProject = ({ gitHubUrl, viewUrl }: Props) => {
   const theme = useThemeAfterRender();
 
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
-
   return (
     <div className="flex gap-4">
       {

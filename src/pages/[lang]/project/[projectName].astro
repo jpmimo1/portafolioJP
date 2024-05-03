@@ -6,6 +6,7 @@ import type { LanguagesContent } from "../../../types/content";
 import { generateUrl } from "../../../utils/generateUrl";
 import ButtonsProject from "../../../components/ButtonsProject";
 import OtherProjects from "../../../components/OtherProjects";
+import SliderImage from "../../../components/SliderImage";
 
 interface IPathsData {
   params: { lang: string; projectName: string };
@@ -102,15 +103,21 @@ const projectsToShow = projects
           <div
             class="md:mb-0 rounded-md overflow-hidden aspect-[16/10] mb-8 border md:w-[450px] shrink-0 lg:w-[750px]"
           >
-            <img
-              src={imageUrl}
-              alt={title}
-              class="h-full w-full object-cover"
-            />
+            {
+              typeof imageUrl === "string" ? (
+                <img
+                  src={typeof imageUrl === "string" ? imageUrl : imageUrl[0]}
+                  alt={title}
+                  class="h-full w-full object-cover"
+                />
+              ) : (
+                <SliderImage urlImages={imageUrl} title={title} client:visible />
+              )
+            }
           </div>
           <div class="md:relative md:grow">
             <p
-              class="mb-7 dark:text-white md:grow md:mb-0 md:absolute md:top-0 md:left-0 md:w-full md:h-full overflow-y-auto"
+              class="mb-7 dark:text-white md:grow md:mb-0 md:absolute md:top-0 md:left-0 md:w-full md:h-full overflow-y-auto whitespace-pre-wrap"
             >
               {description}
             </p>
@@ -140,7 +147,7 @@ const projectsToShow = projects
         </div>
       </div>
     </section>
-    <OtherProjects language={language} keyProject={keyProject} client:visible/>
+    <OtherProjects language={language} keyProject={keyProject} client:visible />
     <Contact language={language} />
   </main>
 </Layout>

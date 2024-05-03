@@ -43,12 +43,12 @@ export const ContentPage: IContentLanguages = {
       subTitle: 'Desarrollador Front-end',
       button1: {
         text: 'Contáctame',
-        url: '',
+        url: '/es/#contact-section',
         iconClass: 'iconportafoliojp-mail',
       },
       button2: {
         text: 'Descargar CV',
-        url: '',
+        url: '/assets/documents/cv/cv-new-es.pdf',
         iconClass: 'iconportafoliojp-pdf'
       }
     },
@@ -147,12 +147,12 @@ export const ContentPage: IContentLanguages = {
       subTitle: 'Front-end developer',
       button1: {
         text: 'Contact me',
-        url: '',
+        url: '/en/#contact-section',
         iconClass: 'iconportafoliojp-mail',
       },
       button2: {
         text: 'Resume',
-        url: '',
+        url: '/assets/documents/cv/cv-new-en.pdf',
         iconClass: 'iconportafoliojp-mail'
       }
     },
@@ -251,320 +251,68 @@ export const ContentProjectPage: IProjectPageLanguages = {
 export const projects: Array<{ [key in LanguagesContent]: IProject }> = [
   {
     es: {
-      title: 'Proyecto 1 Delivery a Cusco',
+      title: 'Pokémon app',
       type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
+      description: '¡Sumérgete en el apasionante mundo de Pokémon con está aplicación web! Diseñada para los fanáticos de la primera generación, esta plataforma te lleva de vuelta a tus recuerdos de infancia mientras exploras la lista completa de Pokémon en el mismo orden que la Pokédex original.\nGracias a la integración con una API actualizada, Pokémon App te brinda información detallada sobre cada Pokémon, desde su nombre y tipo hasta sus estadísticas clave.\nPero eso no es todo, con la opción de marcar tus Pokémon favoritos, puedes crear tu lista personalizada de compañeros Pokémon. \nAdemás tus elecciones se guardan automáticamente gracias a nuestra funcionalidad de almacenamiento local persistente. Así que cada vez que vuelvas a Pokémon App, tus Pokémon favoritos estarán guardados.',
+      imageUrl: ['/assets/images/projects/pokemonApp_1.webp', '/assets/images/projects/pokemonApp_2.webp', '/assets/images/projects/pokemonApp_3.webp'],
+      gitHubUrl: 'https://github.com/jpmimo1/pokemonApp',
+      viewUrl: 'https://pokemon-app-jpmimo1.vercel.app/',
       technologiesTitle: 'Tecnologías usadas:',
-      gitHubUrl: 'https://github.com/jpmimo1/gallery',
-      viewUrl: 'https://gallery-beta-inky.vercel.app/',
       technologiesUsed: [
         technologies.HTML,
         technologies.CSS3,
         technologies.JavaScript,
+        technologies.ReactJS,
+        technologies.NextJS
       ]
     },
     en: {
-      title: 'Project 1 Delivery to Cusco',
+      title: 'Pokémon app',
       type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      gitHubUrl: 'https://github.com/jpmimo1/gallery',
-      viewUrl: 'https://gallery-beta-inky.vercel.app/',
+      description: "Immerse yourself in the exciting world of Pokémon with this web application! Designed for fans of the first generation, this platform takes you back to your childhood memories as you explore the full list of Pokémon in the same order as the original Pokédex.\n Thanks to integration with an updated API, Pokémon App gives you detailed information about each Pokémon, from its name and type to its key statistics.\nBut that's not all, with the option to mark your favorite Pokémon, you can create your personalized list of Pokémon companions.\nPlus your choices are saved automatically thanks to our persistent local storage functionality.So every time you return to the Pokémon App, your favorite Pokémon will be saved.",
+      imageUrl: ['/assets/images/projects/pokemonApp_1.webp', '/assets/images/projects/pokemonApp_2.webp', '/assets/images/projects/pokemonApp_3.webp'],
+      gitHubUrl: 'https://github.com/jpmimo1/pokemonApp',
+      viewUrl: 'https://pokemon-app-jpmimo1.vercel.app/',
+      technologiesTitle: 'Technologies Used:',
       technologiesUsed: [
         technologies.HTML,
         technologies.CSS3,
         technologies.JavaScript,
+        technologies.ReactJS,
+        technologies.NextJS
       ]
     }
   },
   {
     es: {
-      title: 'Proyecto 2 Delivery a Cusco',
+      title: 'Galería de fotos',
       type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
+      description: 'Aplicación web estática, creada con la tecnología Next.js. La aplicación muestra una lista de fotos, todo ello sin la molestia de realizar solicitudes al servidor desde el cliente.\nGracias a la magia de Next.js, se creó una plataforma que te permite navegar por una amplia variedad de imágenes, todas ellas obtenidas de una API externa de manera eficiente y rápida.\nTodo el contenido se genera en tiempo de compilación, lo que significa que obtienes un rendimiento óptimo sin sacrificar la calidad ni la velocidad.\nEste proyecto aún está en pleno desarrollo, y pronto se agregarán más características y nuevas funcionalidades. Desde opciones de filtrado y búsqueda hasta la capacidad de guardar tus fotos favoritas, etc.',
+      imageUrl: ['/assets/images/projects/galleryApp_1.webp', '/assets/images/projects/galleryApp_2.webp', '/assets/images/projects/galleryApp_3.webp'],
+      gitHubUrl: 'https://github.com/jpmimo1/gallery',
+      viewUrl: 'https://gallery-jpmimo1.vercel.app/',
       technologiesTitle: 'Tecnologías usadas:',
       technologiesUsed: [
         technologies.HTML,
         technologies.CSS3,
         technologies.JavaScript,
         technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
+        technologies.NextJS,
       ]
     }, en: {
-      title: 'Project 2 Delivery to Cusco',
+      title: 'Photo gallery',
       type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
+      description: "Static web application, created with Next.js technology. The app displays a list of photos, all without the hassle of making requests to the server from the client.\nThanks to the magic of Next.js, a platform was created that allows you to browse a wide variety of images, all obtained from an external API efficiently and quickly.\nAll content is generated at compile time, meaning you get optimal performance without sacrificing quality or speed.\nThis project is still in full development, and more features and new functionality will be added soon. From filtering and search options to the ability to save your favorite photos, etc.",
+      imageUrl: ['/assets/images/projects/galleryApp_1.webp', '/assets/images/projects/galleryApp_2.webp', '/assets/images/projects/galleryApp_3.webp'],
+      gitHubUrl: 'https://github.com/jpmimo1/gallery',
+      viewUrl: 'https://gallery-jpmimo1.vercel.app/',
+      technologiesTitle: 'Technologies Used:',
       technologiesUsed: [
         technologies.HTML,
         technologies.CSS3,
         technologies.JavaScript,
         technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }
-  }, {
-    es: {
-      title: 'Proyecto 3 Delivery a Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }, en: {
-      title: 'Project 3 Delivery to Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }
-  }, {
-    es: {
-      title: 'Proyecto 4 Delivery a Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }, en: {
-      title: 'Project 4 Delivery to Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }
-  }, {
-    es: {
-      title: 'Proyecto 5 Delivery a Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }, en: {
-      title: 'Project 5 Delivery to Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }
-  }, {
-    es: {
-      title: 'Proyecto 6 Delivery a Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }, en: {
-      title: 'Project 6 Delivery to Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }
-  }, {
-    es: {
-      title: 'Proyecto 7 Delivery a Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }, en: {
-      title: 'Project 7 Delivery to Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }
-  }, {
-    es: {
-      title: 'Proyecto 8 Delivery a Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }, en: {
-      title: 'Project 8 Delivery to Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }
-  }, {
-    es: {
-      title: 'Proyecto 9 Delivery a Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }, en: {
-      title: 'Project 9 Delivery to Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }
-  }, {
-    es: {
-      title: 'Proyecto 10 Delivery a Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
-      ]
-    }, en: {
-      title: 'Project 10 Delivery to Cusco',
-      type: 'Frontend',
-      description: 'Velit Lorem mollit tempor aliqua tempor culpa reprehenderit et est. Ex nostrud laborum minim ipsum est id aliqua Lorem cillum commodo ea. Non do excepteur minim Lorem magna sit commodo enim fugiat quis ex dolor et. Exercitation mollit enim cupidatat ullamco do eiusmod elit ad est sit irure sunt aliquip excepteur.',
-      imageUrl: `https://picsum.photos/500/300?random=${Math.floor(Math.random() * 1000)}`,
-      technologiesTitle: 'Tecnologías usadas:',
-      technologiesUsed: [
-        technologies.HTML,
-        technologies.CSS3,
-        technologies.JavaScript,
-        technologies.ReactJS,
-        technologies.Redux,
-        technologies.Tailwind,
-        technologies.TypeScript
+        technologies.NextJS,
       ]
     }
   }

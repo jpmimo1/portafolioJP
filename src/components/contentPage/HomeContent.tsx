@@ -29,7 +29,7 @@ const HomeContent = ({ language }: Props) => {
         >
           <img
             className="-top-[18%] absolute"
-            src="/assets/images/jp-profile.jpg"
+            src="/assets/images/jp-profile.webp"
             alt="jp-profile"
           />
         </div>
@@ -60,6 +60,7 @@ const HomeContent = ({ language }: Props) => {
               variant="outlined"
               bgColor={theme === 'light' ? "primary" : 'white'}
               textColor={theme === 'light' ? "white" : 'primary'}
+              target='_blank'
             />
           </div>
           <div className="flex gap-4">

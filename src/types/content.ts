@@ -65,7 +65,7 @@ export interface IProject {
   type: string,
   gitHubUrl?: string,
   viewUrl?: string,
-  imageUrl: string,
+  imageUrl: string | string[],
   description: string,
   technologiesTitle: string,
   technologiesUsed: ITechnology[],

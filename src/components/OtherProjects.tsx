@@ -48,6 +48,7 @@ const OtherProjects = ({ language, keyProject }: Props) => {
             projectsToShow.map((project) => {
               return (
                 <CardProject
+                  key={project[language].title}
                   project={project[language]}
                   language={language}
                   seeProjectIcon={seeProjectIcon}
