@@ -56,6 +56,9 @@ const Contact = ({ language }: Props) => {
       return { ...prevValue, [key]: value }
     });
   };
+  useEffect(() => {
+    toast.success('contenido', { autoClose: false, theme: 'dark' })
+  }, [])
 
   const onSubmitForm: React.FormEventHandler<HTMLFormElement> = async (e) => {
     if (isLoading) {
