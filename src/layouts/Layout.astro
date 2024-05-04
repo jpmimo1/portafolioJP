@@ -4,7 +4,10 @@ import type { LanguagesContent } from "../types/content";
 import { ContentPage } from "../data";
 import "../styles/base.css";
 import Footer from "../components/contentPage/Footer.astro";
+import ToastContainerInitial from "../components/basic/ToastContainerInitial";
 import "@splidejs/splide/css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 interface Props {
   language: LanguagesContent;
@@ -65,5 +68,6 @@ const currenPath = Astro.url.pathname;
       <slot />
     </div>
     <Footer language={language} />
+    <ToastContainerInitial client:load />
   </body>
 </html>

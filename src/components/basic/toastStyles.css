@@ -1,0 +1,10 @@
+.Toastify__toast{
+  @apply shadow-md
+}
+
+.Toastify__toast-theme--dark {
+  @apply bg-slate-800;
+}
+.Toastify__toast-theme--light {
+  @apply bg-slate-100;
+}

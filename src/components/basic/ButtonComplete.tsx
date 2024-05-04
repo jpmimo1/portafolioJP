@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useCallback, useMemo } from 'react';
+import Spinner, { type Colors as ColorsSpinner } from './Spinner';
 
 type sizesButton = 'xs' | 's' | 'm' | 'l' | 'xl';
 type variants = 'text' | 'outlined' | 'contained';
@@ -16,7 +17,9 @@ interface ButtonAnchor extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: variants,
   bgColor?: bgColors,
   textColor?: textColors,
-  rounded?: roundeds
+  rounded?: roundeds,
+  isLoading?: boolean,
+  loadingColor?: ColorsSpinner
 }
 interface ButtonNormal extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   typeElement: 'button',
@@ -27,12 +30,14 @@ interface ButtonNormal extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: variants,
   bgColor?: bgColors,
   textColor?: textColors,
-  rounded?: roundeds
+  rounded?: roundeds,
+  isLoading?: boolean,
+  loadingColor?: ColorsSpinner
 }
 
 type Props = ButtonAnchor | ButtonNormal;
 
-const baseStyles = 'flex flex-nowrap items-center justify-center transition-colors'
+const baseStyles = 'flex flex-nowrap items-center justify-center transition-colors disabled:opacity-50'
 const baseStylesIcon = 'flex justify-center items-center'
 
 const sizeStyles: { [key in sizesButton]: string } = {
@@ -61,9 +66,9 @@ type IVariantsColorStyles = { [key in variants]: { bg: { [key in bgColors]: stri
 const variantsColorStyles: IVariantsColorStyles = {
   contained: {
     bg: {
-      primary: 'bg-primary-700 hover:bg-primary-800 active:bg-primary-900',
-      secondary: 'bg-secondary-700 hover:bg-secondary-800 active:bg-secondary-900',
-      white: 'bg-white hover:bg-slate-100 active:bg-slate-200'
+      primary: 'bg-primary-700 hover:bg-primary-800 active:bg-primary-900 disabled:hover:bg-primary-700 disabled:active:bg-primary-700',
+      secondary: 'bg-secondary-700 hover:bg-secondary-800 active:bg-secondary-900 disabled:hover:bg-secondary-700 disabled:active:bg-secondary-700',
+      white: 'bg-white hover:bg-slate-100 active:bg-slate-200 disabled:hover:bg-white disabled:active:bg-white'
     },
     text: {
       primary: 'text-primary-700',
@@ -117,6 +122,8 @@ const ButtonComplete = (props: Props) => {
     bgColor = 'primary',
     textColor = 'white',
     rounded = 'normal',
+    isLoading = false,
+    loadingColor,
     className,
     ...buttonProps
   } = props;
@@ -127,7 +134,7 @@ const ButtonComplete = (props: Props) => {
     baseStyles,
     sizeStyles[size],
     variantStyles(bgColor, textColor)[variant],
-    roundedStyles[rounded]
+    roundedStyles[rounded],
   );
   const iconStyles = classNames(baseStylesIcon, sizeIconStyles[size]);
 
@@ -136,8 +143,9 @@ const ButtonComplete = (props: Props) => {
       {icon1 ? <div className={classNames(icon1, iconStyles)} /> : null}
       {text || null}
       {icon2 ? <div className={classNames(icon2, iconStyles)} /> : null}
+      {isLoading ? <div className='ml-2'><Spinner size={size} colors={loadingColor} /></div> : null}
     </>);
-  }, [text, icon1, icon2]);
+  }, [text, icon1, icon2, isLoading]);
 
 
   switch (typeElement) {
