@@ -1,7 +1,7 @@
 ---
 import { ContentPage } from "../../data";
 import type { LanguagesContent } from "../../types/content";
-import SliderKnowledge from "../SliderKnowledge.astro";
+import SliderKnowledge from "../SliderKnowledge";
 
 interface Props {
   language: LanguagesContent;
@@ -25,6 +25,6 @@ const { title, paragraph } = ContentPage[language].knoledgeContent;
     </p>
   </div>
   <div class="lg:max-w-screen-xl lg:mx-auto lg:px-8">
-    <SliderKnowledge />
+    <SliderKnowledge client:visible />
   </div>
 </section>

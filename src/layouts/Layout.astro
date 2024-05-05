@@ -6,8 +6,8 @@ import "../styles/base.css";
 import Footer from "../components/contentPage/Footer.astro";
 import ToastContainerInitial from "../components/basic/ToastContainerInitial";
 import "@splidejs/splide/css";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   language: LanguagesContent;
@@ -32,7 +32,7 @@ const currenPath = Astro.url.pathname;
     <title>{title}</title>
     <link href="/assets/icons/icons.css" rel="stylesheet" />
   </head>
-  <body class="text-slate-700">
+  <body class="text-slate-700 bg-slate-100 dark:bg-primary-900">
     <script>
       import { $currentTheme } from "../stores/themeStore";
 
@@ -55,6 +55,12 @@ const currenPath = Astro.url.pathname;
             localStorage.theme = "dark";
             document.documentElement.classList.add("dark");
           }
+        }
+      });
+
+      document.addEventListener("astro:after-swap", () => {
+        if (localStorage.theme === "dark") {
+          document.documentElement.classList.add("dark");
         }
       });
     </script>
