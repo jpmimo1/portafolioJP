@@ -1,6 +1,20 @@
 import type { IContentLanguages, IProject, IProjectPageLanguages, ISocialMedia, ITechnology, LanguagesContent } from "../types/content";
 
-type keysTechnologies = "HTML" | "CSS3" | "JavaScript" | "TypeScript" | "ReactJS" | "NextJS" | "Tailwind" | "Redux" | "NodeJS" | "Git" | "Selenium" | "Jest";
+type keysTechnologies =
+  "HTML" |
+  "CSS3" |
+  "JavaScript" |
+  "TypeScript" |
+  "ReactJS" |
+  "NextJS" |
+  "Tailwind" |
+  "Redux" |
+  "NodeJS" |
+  "Git" |
+  "Selenium" |
+  "Jest" |
+  'Zustand' |
+  'Shadcn-ui';
 type keysSocialMedias = 'GitHub' | 'LinkedIn';
 
 
@@ -19,6 +33,8 @@ export const technologies: { [key in keysTechnologies]: ITechnology } = {
   Git: { name: "Git", url: "/assets/images/technologies/git.svg" },
   Selenium: { name: "Selenium", url: "/assets/images/technologies/selenium.svg" },
   Jest: { name: "Jest", url: "/assets/images/technologies/jest.svg" },
+  Zustand: { name: "Zustand", url: "/assets/images/technologies/zustand.webp" },
+  'Shadcn-ui': { name: "Shadcn-ui", url: "/assets/images/technologies/shadcn-ui.png" },
 };
 
 export const socialMedias: { [key in keysSocialMedias]: ISocialMedia } = {
@@ -249,6 +265,48 @@ export const ContentProjectPage: IProjectPageLanguages = {
 }
 
 export const projects: Array<{ [key in LanguagesContent]: IProject }> = [
+  {
+    es: {
+      title: 'Weather app',
+      type: 'Full Stack',
+      description: 'Aplicación web de clima, diseñada para ofrecerte la información meteorológica más precisa y actualizada, sin importar dónde te encuentres. Esta plataforma, optimizada para dispositivos de todos los tamaños, te garantiza una experiencia fluida y atractiva tanto en tu smartphone, tablet como en tu computadora de escritorio.\nEsta aplicación también permite explorar y guardar información meteorológica de otros lugares alrededor del mundo. Con solo unos clics, puedes agregar múltiples ubicaciones y acceder fácilmente a sus pronósticos.\nEl diseño intuitivo y elegante, hace que navegar por la información del clima sea una experiencia agradable. Los detalles se presentan de manera clara y atractiva, asegurando que puedas encontrar rápidamente lo que necesitas, desde la temperatura actual hasta las previsiones a varios días.',
+      imageUrl: ['/assets/images/projects/weatherApp_1.webp', '/assets/images/projects/weatherApp_2.webp', '/assets/images/projects/weatherApp_3.webp', '/assets/images/projects/weatherApp_4.webp', '/assets/images/projects/weatherApp_5.webp', '/assets/images/projects/weatherApp_6.webp'],
+      gitHubUrl: 'https://github.com/jpmimo1/weatherApp',
+      viewUrl: 'https://weather-app-two-wine-13.vercel.app/',
+      technologiesTitle: 'Tecnologías usadas:',
+      technologiesUsed: [
+        technologies.ReactJS,
+        technologies.NextJS,
+        technologies.TypeScript,
+        technologies.NodeJS,
+        technologies.Zustand,
+        technologies["Shadcn-ui"],
+        technologies.HTML,
+        technologies.CSS3,
+        technologies.JavaScript,
+      ]
+    },
+    en: {
+      title: 'Weather app',
+      type: 'Full Stack',
+      description: 'Weather web application, designed to give you the most accurate and up-to-date weather information, no matter where you are. This platform, optimized for devices of all sizes, guarantees you a fluid and attractive experience on both your smartphone, tablet and desktop computer.\nThis application also allows you to explore and save weather information from other places around the world. With just a few clicks, you can add multiple locations and easily access their forecasts.\nThe intuitive and elegant design makes browsing weather information a pleasant experience. Details are presented clearly and attractively, ensuring you can quickly find what you need, from the current temperature to multi-day forecasts.',
+      imageUrl: ['/assets/images/projects/weatherApp_1.webp', '/assets/images/projects/weatherApp_2.webp', '/assets/images/projects/weatherApp_3.webp', '/assets/images/projects/weatherApp_4.webp', '/assets/images/projects/weatherApp_5.webp', '/assets/images/projects/weatherApp_6.webp'],
+      gitHubUrl: 'https://github.com/jpmimo1/weatherApp',
+      viewUrl: 'https://weather-app-two-wine-13.vercel.app/',
+      technologiesTitle: 'Technologies Used:',
+      technologiesUsed: [
+        technologies.ReactJS,
+        technologies.NextJS,
+        technologies.TypeScript,
+        technologies.NodeJS,
+        technologies.Zustand,
+        technologies["Shadcn-ui"],
+        technologies.HTML,
+        technologies.CSS3,
+        technologies.JavaScript,
+      ]
+    }
+  },
   {
     es: {
       title: 'Pokémon app',
