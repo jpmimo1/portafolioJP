@@ -64,7 +64,7 @@ export const ContentPage: IContentLanguages = {
       },
       button2: {
         text: 'Descargar CV',
-        url: '/assets/documents/cv/cv-new-es.pdf',
+        url: '/assets/documents/cv/CV-ES.pdf',
         iconClass: 'iconportafoliojp-pdf'
       }
     },
@@ -168,8 +168,8 @@ export const ContentPage: IContentLanguages = {
       },
       button2: {
         text: 'Resume',
-        url: '/assets/documents/cv/cv-new-en.pdf',
-        iconClass: 'iconportafoliojp-mail'
+        url: '/assets/documents/cv/CV-EN.pdf',
+        iconClass: 'iconportafoliojp-pdf'
       }
     },
     aboutMeContent: {
